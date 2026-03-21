@@ -126,6 +126,8 @@ export default {
         'slide-down': 'slideDown 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
         'scale-in': 'scaleIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
         'fade-in': 'fadeIn 1s ease-out forwards',
+        'scroll-dot': 'scrollDot 1.5s ease-in-out infinite',
+        'fade-in-down': 'fadeInDown 1.5s ease-in-out infinite',
       }
     },
   },

@@ -12,7 +12,7 @@ const resources = {
       'nav.faq': 'FAQ',
       'nav.contact': 'Contacto',
       'nav.cta': 'Empezar',
-      
+
       // Home
       'home.hero.badge': 'Laboratorio de Innovación',
       'home.hero.title': 'Tecnología que conecta, protege y transforma',
@@ -162,7 +162,7 @@ const resources = {
       'about.team.subtitle': 'Las mentes detrás de la tecnología que impulsa el futuro.',
       'about.team.sergio.name': 'Ing. Sergio Peralta',
       'about.team.sergio.role': 'CEO Fundador',
-      'about.team.sergio.bio': 'Con más de 15 años de experiencia construyendo proyectos escalables y liderando innovación disruptiva en empresas Fortune 500. Sergio impulsa la visión estratégica de OmegaTech, fusionando agudeza empresarial con profunda experiencia técnica.',
+      'about.team.sergio.bio': 'Con más de 15 años de experiencia construyendo proyectos escalables y liderando innovación disruptiva en empresas de gran escala. Sergio impulsa la visión estratégica de OmegaTech, fusionando agudeza empresarial con profunda experiencia técnica.',
       'about.team.kesia.name': 'Lic. Kesia Peralta',
       'about.team.kesia.role': 'Gerente de QA',
       'about.team.kesia.bio': 'Asegurando que nuestros estándares obsesivos de calidad se cumplan en cada etapa. Kesia lidera nuestros protocolos de Aseguramiento de Calidad, garantizando que cada producto desplegado sea seguro, confiable y ejecutado impecablemente.',
@@ -240,7 +240,7 @@ const resources = {
       'nav.faq': 'FAQ',
       'nav.contact': 'Contact',
       'nav.cta': 'Get Started',
-      
+
       // Home
       'home.hero.badge': 'Innovation Lab',
       'home.hero.title': 'Technology that connects, protects and transforms',
