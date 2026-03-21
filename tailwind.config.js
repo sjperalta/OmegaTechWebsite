@@ -63,6 +63,8 @@ export default {
         "inverse-primary": "var(--inverse-primary)",
         "on-primary-container": "var(--on-primary-container)",
         glass: 'var(--glass-bg)',
+        'glass-bg': 'rgba(255, 255, 255, 0.03)',
+        'glass-border': 'rgba(255, 255, 255, 0.08)',
       },
       fontFamily: {
         headline: ['var(--font-display)', 'Space Grotesk', 'sans-serif'],
@@ -76,9 +78,17 @@ export default {
         'md': '0.75rem',
         'lg': '1rem',
         'xl': '1.25rem',
-        '2xl': '1.5rem',
-        '3xl': '2rem',
+        '2xl': '1rem', // Overridden
+        '3xl': '1.5rem', // Overridden
+        '4xl': '2rem',
+        '5xl': '2.5rem',
         'full': '9999px',
+      },
+      backdropBlur: {
+        glass: '12px',
+      },
+      boxShadow: {
+        'glow-primary': '0 0 20px -5px hsl(var(--primary) / 0.3)',
       },
       spacing: {
         '16': '4rem',
