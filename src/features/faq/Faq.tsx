@@ -17,9 +17,9 @@ const Faq: React.FC = () => {
   ];
 
   return (
-    <div className="py-24 md:py-32 bg-surface">
-      <div className="container max-w-[800px]">
-        <h1 className="text-4xl md:text-5xl font-display font-medium text-center mb-16 tracking-tight">
+    <div className="pt-24 pb-24 md:pb-32 bg-surface">
+      <div className="container mx-auto px-8 max-w-6xl">
+        <h1 className="text-5xl md:text-7xl font-display font-medium mb-16 tracking-tight">
           {t('faq.title')} <span className="text-primary">{t('faq.title.highlight')}</span>
         </h1>
         

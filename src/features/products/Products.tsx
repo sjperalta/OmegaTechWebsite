@@ -84,10 +84,10 @@ const Products: React.FC<ProductsProps> = ({ onNavigate }) => {
   ];
 
   return (
-    <div className="bg-surface py-20 lg:py-32">
-      <div className="container mx-auto px-8 max-w-[1200px]">
+    <div className="bg-surface pt-24 pb-20 lg:pb-32 mx-auto">
+      <div className="container mx-auto px-8 max-w-6xl">
         <header className="mb-20 animate-slide-down">
-          <h1 className="text-4xl md:text-[3.5rem] font-display font-medium text-on-surface mb-6 tracking-tight leading-tight">
+          <h1 className="text-5xl md:text-7xl font-display font-medium text-on-surface mb-6 tracking-tight leading-tight">
             Our <span className="text-primary">Software Products</span>
           </h1>
           <p className="text-xl text-on-surface-variant max-w-[700px] leading-relaxed opacity-0 animate-[fadeIn_1s_ease-out_0.2s_forwards]">
@@ -99,7 +99,7 @@ const Products: React.FC<ProductsProps> = ({ onNavigate }) => {
           {productsList.map((p, i) => (
             <div 
               key={i} 
-              className={`reveal animate-slide-up bg-surface-container-low rounded-[40px] border border-outline-variant p-8 md:p-20 flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 md:gap-20 items-center min-h-[600px] shadow-sm`}
+              className={`reveal animate-slide-up bg-surface-container-low rounded-[40px] border border-outline-variant p-8 md:p-20 flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 md:gap-20 items-center min-h-[600px] shadow-sm hover:-translate-y-2 hover:shadow-2xl hover:border-primary/20 transition-all duration-500`}
             >
               {/* Product Info */}
               <div className="flex-1 flex flex-col gap-8 w-full">

@@ -73,10 +73,10 @@ const resources = {
       'services.list.fintech.desc': 'Automatización de reservas, contratos inteligentes y flujos de pago. Dashboards de seguimiento financiero y legal.',
       'services.list.security.title': 'Seguridad y Control de Accesos',
       'services.list.security.desc': 'Sistemas biométricos, lectores RFID y barreras inteligentes con monitoreo en tiempo real y alertas predictivas.',
-      'services.list.iot.title': 'IoT y Hardware Inteligente',
-      'services.list.iot.desc': 'Dispositivos conectados para monitoreo ambiental, consumo energético y automatización con integración nativa.',
       'services.list.consulting.title': 'Consultoría Tecnológica Estratégica',
       'services.list.consulting.desc': 'Diagnóstico de madurez digital, arquitectura de software y hoja de ruta para transformación digital basada en nuestra experiencia.',
+      'services.list.staff.title': 'Staff Augmentation',
+      'services.list.staff.desc': 'Integramos expertos especializados en tu equipo para acelerar tus procesos de desarrollo y cubrir brechas de conocimiento crítico.',
 
       // About Detailed
       'about.title': 'Innovación con',
@@ -122,9 +122,9 @@ const resources = {
       'contact.info.legal': 'Presencia Legal',
       'contact.info.legal.desc': 'OmegaTech Ecosystems S.A. de C.V.',
       'contact.info.hq': 'Centro de Operaciones',
-      'contact.info.hq.desc': 'Main Tower, Floor 12\nDistrito Tecnológico',
+      'contact.info.hq.desc': 'Pto Cortes, Cienguita.',
       'contact.info.direct': 'Contacto Directo',
-      'contact.info.direct.desc': 'consulting@omegatech.ai\n+52 (55) 8526-4433',
+      'contact.info.direct.desc': 'info@omegatech.dev\n+504 31848112',
 
       // Footer
       'footer.tagline': 'Tecnología que conecta, protege y transforma.',
@@ -137,6 +137,7 @@ const resources = {
       'footer.security': 'Seguridad',
       'footer.careers': 'Carreras',
       'footer.press': 'Prensa',
+      'footer.contact': 'Contacto',
       'footer.rights': 'Todos los derechos reservados.',
       'footer.made_with': 'Hecho con precisión kinética',
 
@@ -231,10 +232,10 @@ const resources = {
       'services.list.fintech.desc': 'Automation of bookings, smart contracts, and payment flows. Financial and legal tracking dashboards.',
       'services.list.security.title': 'Security & Access Control',
       'services.list.security.desc': 'Biometric systems, RFID readers, and smart barriers with real-time monitoring and predictive alerts.',
-      'services.list.iot.title': 'IoT & Smart Hardware',
-      'services.list.iot.desc': 'Connected devices for environmental monitoring, energy consumption, and automation with native integration.',
       'services.list.consulting.title': 'Strategic Technology Consulting',
       'services.list.consulting.desc': 'Digital maturity diagnostics, software architecture, and roadmap for digital transformation based on our experience.',
+      'services.list.staff.title': 'Staff Augmentation',
+      'services.list.staff.desc': 'We integrate specialized experts into your team to accelerate your development processes and bridge critical knowledge gaps.',
 
       // About
       'about.title': 'Innovation with',
@@ -280,9 +281,9 @@ const resources = {
       'contact.info.legal': 'Legal Presence',
       'contact.info.legal.desc': 'OmegaTech Ecosystems S.A. de C.V.',
       'contact.info.hq': 'Operations Center',
-      'contact.info.hq.desc': 'Main Tower, Floor 12\nTech District',
+      'contact.info.hq.desc': 'Pto Cortes, Cienguita.',
       'contact.info.direct': 'Direct Contact',
-      'contact.info.direct.desc': 'consulting@omegatech.ai\n+52 (55) 8526-4433',
+      'contact.info.direct.desc': 'info@omegatech.dev\n+504 31848112',
 
       // Footer
       'footer.tagline': 'Technology that connects, protects and transforms.',
@@ -295,6 +296,7 @@ const resources = {
       'footer.security': 'Security',
       'footer.careers': 'Careers',
       'footer.press': 'Press',
+      'footer.contact': 'Contact',
       'footer.rights': 'All rights reserved.',
       'footer.made_with': 'Made with kinetic precision',
 
