@@ -5,6 +5,8 @@ import logoMinikids from '../../assets/customers/minokids/minikids-logo.svg';
 import logoServpro from '../../assets/customers/servpro/servpro-logo.png';
 import logoVanHeusen from '../../assets/customers/vanheusen/van-heusen-white.svg';
 import logoFama from '../../assets/customers/fama/ImagotipoFAMA_Logotipo-blanco.png';
+import imgSergio from '../../assets/people/sergio-peralta-ceo.png';
+import imgKesia from '../../assets/people/kesia-peralta-qa-manager.png';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
@@ -108,6 +110,65 @@ const About: React.FC = () => {
                   <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-light">{val.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Leadership Team Section */}
+        <section className="max-w-6xl mx-auto px-8 py-20">
+          <div className="text-center max-w-3xl mx-auto mb-20 reveal">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-[10px] font-bold tracking-[0.3em] uppercase mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-[pulse_2s_ease-in-out_infinite]"></span>
+              {t('about.team.badge')}
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black font-headline tracking-tighter text-on-surface uppercase mb-6 leading-[0.9]">
+              {t('about.team.title')}
+              <span className="text-primary italic pr-2">{t('about.team.title.highlight')}</span>
+            </h2>
+            <p className="text-on-surface-variant text-lg opacity-60 leading-relaxed font-light">
+              {t('about.team.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+            {/* Sergio Peralta */}
+            <div className="neo-bento-card group overflow-hidden relative border-primary/10 hover:border-primary/30 transition-colors duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="flex flex-col h-full">
+                <div className="relative h-96 w-full overflow-hidden bg-surface-container-low border-b border-white/5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10 w-full h-[101%] pointer-events-none"></div>
+                  <img src={imgSergio} alt={t('about.team.sergio.name')} className="object-cover object-top w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
+                </div>
+                <div className="p-10 relative z-20 -mt-16">
+                  <div className="inline-flex items-center gap-2 text-primary font-bold text-[10px] tracking-[0.2em] uppercase mb-4 bg-surface border border-white/10 px-4 py-2 rounded-sm shadow-xl backdrop-blur-md">
+                    {t('about.team.sergio.role')}
+                  </div>
+                  <h3 className="text-3xl font-black font-headline text-on-surface uppercase tracking-tight mb-4">{t('about.team.sergio.name')}</h3>
+                  <p className="text-on-surface-variant text-sm opacity-80 leading-relaxed font-light">
+                    {t('about.team.sergio.bio')}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Kesia Peralta */}
+            <div className="neo-bento-card group overflow-hidden relative border-primary/10 hover:border-primary/30 transition-colors duration-500">
+              <div className="absolute inset-0 bg-gradient-to-bl from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="flex flex-col h-full">
+                <div className="relative h-96 w-full overflow-hidden bg-surface-container-low border-b border-white/5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10 w-full h-[101%] pointer-events-none"></div>
+                  <img src={imgKesia} alt={t('about.team.kesia.name')} className="object-cover object-top w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
+                </div>
+                <div className="p-10 relative z-20 -mt-16">
+                  <div className="inline-flex items-center gap-2 text-primary font-bold text-[10px] tracking-[0.2em] uppercase mb-4 bg-surface border border-white/10 px-4 py-2 rounded-sm shadow-xl backdrop-blur-md">
+                    {t('about.team.kesia.role')}
+                  </div>
+                  <h3 className="text-3xl font-black font-headline text-on-surface uppercase tracking-tight mb-4">{t('about.team.kesia.name')}</h3>
+                  <p className="text-on-surface-variant text-sm opacity-80 leading-relaxed font-light">
+                    {t('about.team.kesia.bio')}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
