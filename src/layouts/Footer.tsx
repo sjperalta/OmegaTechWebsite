@@ -19,13 +19,13 @@ const Footer: React.FC = () => {
               <span className="material-symbols-outlined text-lg opacity-50 group-hover:opacity-100 transition-opacity">mail</span>
               info@omegatech.dev
             </a>
-            <a href="tel:+50431848112" className="flex items-center gap-3 text-white/40 hover:text-primary transition-colors text-xs group">
+            <a href="tel:+50499405708" className="flex items-center gap-3 text-white/40 hover:text-primary transition-colors text-xs group">
               <span className="material-symbols-outlined text-lg opacity-50 group-hover:opacity-100 transition-opacity">call</span>
-              +504 31848112
+              +504 9940 5708
             </a>
             <div className="flex items-center gap-3 text-white/40 text-xs">
               <span className="material-symbols-outlined text-lg opacity-50">location_on</span>
-              Pto Cortes, Cienguita.
+              {t('footer.location')}
             </div>
           </div>
         </div>
@@ -33,10 +33,10 @@ const Footer: React.FC = () => {
         <div className="space-y-4">
           <h5 className="text-primary font-bold text-sm uppercase tracking-widest">{t('footer.solutions')}</h5>
           <ul className="space-y-2 text-white/60 text-xs font-body">
-            <li><a className="hover:text-primary transition-colors" href="#">ArenaGo Ticketing</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Fintera Payments</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">SecureX Control</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">IoT Hub</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.solutions.arenago')}</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.solutions.fintera')}</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.solutions.securex')}</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.solutions.iot')}</a></li>
           </ul>
         </div>
 
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
             <li><a className="hover:text-primary transition-colors" href="#">{t('nav.about')}</a></li>
             <li><a className="hover:text-primary transition-colors" href="#">{t('nav.services')}</a></li>
             <li><a className="hover:text-primary transition-colors" href="#">{t('footer.careers')}</a></li>
-            <li><a className="hover:text-primary transition-colors" href="#">Blog</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.blog')}</a></li>
           </ul>
         </div>
 
@@ -55,19 +55,18 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-2 font-body text-xs tracking-wide text-white/60">
             <a className="hover:text-primary underline-offset-4 hover:underline" href="#">{t('footer.privacy')}</a>
             <a className="hover:text-primary underline-offset-4 hover:underline" href="#">{t('footer.terms')}</a>
-            <a className="hover:text-primary underline-offset-4 hover:underline" href="#">{t('footer.security')}</a>
-            <a className="hover:text-primary underline-offset-4 hover:underline" href="#">{t('footer.contact')}</a>
+            <a className="hover:text-primary underline-offset-4 hover:underline" href="#">{t('footer.cookies')}</a>
           </div>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-8 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
         <span className="text-white/30 text-[10px] tracking-widest font-label uppercase">
-          © {new Date().getFullYear()} OmegaTech. All Rights Reserved.
+          © {new Date().getFullYear()} OmegaTech. {t('footer.rights')}
         </span>
         <div className="flex items-center gap-2">
           <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(173,199,255,0.8)]"></div>
-          <span className="text-[10px] font-label text-white/40 uppercase tracking-widest">Global Status: Operational</span>
+          <span className="text-[10px] font-label text-white/40 uppercase tracking-widest">{t('footer.status')}: {t('footer.status.operational')}</span>
         </div>
       </div>
     </footer>

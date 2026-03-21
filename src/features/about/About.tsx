@@ -1,114 +1,160 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useReveal } from '../../hooks/useReveal';
 import logoMinikids from '../../assets/customers/minokids/minikids-logo.svg';
 import logoServpro from '../../assets/customers/servpro/servpro-logo.png';
-import logoVanHeusen from '../../assets/customers/vanheusen/vanheusen-logo.svg';
-import { useReveal } from '../../hooks/useReveal';
-import teamImage from '../../assets/about-team.png';
+import logoVanHeusen from '../../assets/customers/vanheusen/van-heusen-white.svg';
+import logoFama from '../../assets/customers/fama/ImagotipoFAMA_Logotipo-blanco.png';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   useReveal();
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
-    <div className="pt-24 pb-24 md:pb-32">
-      <div className="container mx-auto px-8 max-w-6xl">
-        <header className="mb-20 animate-slide-down">
-          <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight mb-8">
-            {t('about.title')} <span className="text-primary">{t('about.title.highlight')}</span>
-          </h1>
-          <p className="text-xl text-on-surface-variant leading-relaxed opacity-0 animate-fade-in [animation-delay:0.2s]">
-            {t('about.subtitle')}
-          </p>
-        </header>
+    <div className="relative min-h-screen bg-background overflow-hidden selection:bg-primary/30">
+      {/* Dynamic Spotlight Background */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(14, 165, 233, 0.05), transparent 80%)`
+        }}
+      />
+      
+      {/* Animated Background Elements */}
+      <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px] animate-pulse [animation-delay:2s]"></div>
 
-        <img 
-          src={teamImage} 
-          alt={t('about.team.title')} 
-          className="reveal active rounded-[32px] w-full h-[400px] md:h-[600px] object-cover mb-20 filter brightness-110 shadow-2xl"
-        />
+      <main className="relative z-10 pt-40 pb-20">
+        {/* Hero Section */}
+        <section className="max-w-6xl mx-auto px-8 mb-40">
+          <div className="reveal">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-[fadeIn_1s_ease-out]">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span className="text-[10px] font-bold text-primary tracking-widest uppercase">{t('about.hero.badge')}</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter leading-[0.8] text-on-surface uppercase mb-16 [text-wrap:balance]">
+              {t('about.hero.title')}
+            </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-20">
-          <div className="reveal active flex flex-col gap-6">
-            <h3 className="text-2xl font-display font-medium text-on-surface border-b border-primary pb-3 inline-block self-start">{t('about.mission.title')}</h3>
-            <p className="text-on-surface-variant text-lg leading-relaxed">
-              {t('about.mission.desc')}
-            </p>
-          </div>
-          <div className="reveal active flex flex-col gap-6">
-            <h3 className="text-2xl font-display font-medium text-on-surface border-b border-primary pb-3 inline-block self-start">{t('about.vision.title')}</h3>
-            <p className="text-on-surface-variant text-lg leading-relaxed">
-              {t('about.vision.desc')}
-            </p>
-          </div>
-        </div>
-
-        <section className="bg-surface-low p-10 md:p-20 rounded-[32px] mb-20">
-          <h2 className="text-4xl font-display font-medium text-center mb-16">{t('about.values.title')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {[
-              { t: t('about.values.v1.title'), d: t('about.values.v1.desc') },
-              { t: t('about.values.v2.title'), d: t('about.values.v2.desc') },
-              { t: t('about.values.v3.title'), d: t('about.values.v3.desc') },
-              { t: t('about.values.v4.title'), d: t('about.values.v4.desc') }
-            ].map((v, i) => (
-              <div key={i} className="flex flex-col gap-4">
-                <h4 className="text-primary text-xl font-display font-medium">{v.t}</h4>
-                <p className="text-on-surface-variant leading-relaxed">{v.d}</p>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+              <div className="lg:col-span-7">
+                <p className="text-on-surface-variant text-xl md:text-2xl leading-relaxed opacity-60 font-body font-light tracking-tight mb-12">
+                  {t('about.hero.desc')}
+                </p>
+                <div className="flex flex-wrap gap-8 items-center opacity-40">
+                   <div className="flex flex-col">
+                      <span className="text-2xl font-black font-headline text-on-surface uppercase leading-none mb-1">{t('about.stats.years.value')}</span>
+                      <span className="text-[10px] uppercase tracking-widest font-bold opacity-70">{t('about.stats.years.label')}</span>
+                   </div>
+                   <div className="w-px h-10 bg-on-surface/20"></div>
+                   <div className="flex flex-col">
+                      <span className="text-2xl font-black font-headline text-on-surface uppercase leading-none mb-1">{t('about.stats.partners.value')}</span>
+                      <span className="text-[10px] uppercase tracking-widest font-bold opacity-70">{t('about.stats.partners.label')}</span>
+                   </div>
+                   <div className="w-px h-10 bg-on-surface/20"></div>
+                   <div className="flex flex-col">
+                      <span className="text-2xl font-black font-headline text-on-surface uppercase leading-none mb-1">{t('about.stats.startups.value')}</span>
+                      <span className="text-[10px] uppercase tracking-widest font-bold opacity-70">{t('about.stats.startups.label')}</span>
+                   </div>
+                </div>
               </div>
-            ))}
+              
+              <div className="lg:col-span-5">
+                <div className="neo-bento-card p-12 group hover:scale-[1.02] transition-transform duration-500 bg-white/5 backdrop-blur-3xl border-white/10">
+                  <div className="text-primary font-bold text-[10px] tracking-[0.4em] uppercase mb-8">{t('about.mission.badge')}</div>
+                  <h3 className="text-3xl font-black font-headline text-on-surface uppercase mb-6 leading-none group-hover:text-primary transition-colors">
+                    {t('about.mission.title')}
+                  </h3>
+                  <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-body font-light">
+                    {t('about.mission.desc')}
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <section className="mb-20">
-          <h2 className="text-4xl font-display font-medium text-center mb-16">{t('about.team.title')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { 
-                name: 'Sergio Peralta', 
-                role: t('about.team.founder.role'), 
-                img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400' 
-              },
-              { 
-                name: 'Kesia Peralta', 
-                role: t('about.team.cto.role'), 
-                img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400' 
-              },
-              { 
-                name: 'Marco Rossi', 
-                role: t('about.team.innov.role'), 
-                img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400' 
-              }
-            ].map((member, i) => (
-              <div key={i} className="text-center p-10 bg-surface-container rounded-3xl border border-outline-variant hover:-translate-y-2 transition-all duration-300">
+        {/* Philosophy & Values */}
+        <section className="relative py-40 px-8 bg-surface/30 backdrop-blur-3xl border-y border-white/5">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8 reveal">
+              <div className="max-w-2xl">
+                <div className="text-primary font-bold text-[10px] tracking-[0.4em] uppercase mb-6">{t('about.values.title')}</div>
+                <h2 className="text-4xl md:text-6xl font-black font-headline tracking-tighter text-on-surface uppercase leading-[0.85]">
+                  Our <span className="text-glow">{t('about.values.highlight')}</span>
+                </h2>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { icon: 'verified', title: t('about.values.v1.title'), desc: t('about.values.v1.desc') },
+                { icon: 'bolt', title: t('about.values.v2.title'), desc: t('about.values.v2.desc') },
+                { icon: 'group', title: t('about.values.v3.title'), desc: t('about.values.v3.desc') }
+              ].map((val, i) => (
+                <div key={i} className="neo-bento-card p-12 group hover:bg-primary/5 reveal">
+                  <span className="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform">{val.icon}</span>
+                  <h4 className="text-2xl font-black font-headline text-on-surface uppercase mb-4 leading-none">{val.title}</h4>
+                  <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-light">{val.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Global Impact */}
+        <section className="max-w-6xl mx-auto px-8 py-40">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center reveal">
+            <div>
+              <div className="text-primary font-bold text-[10px] tracking-[0.4em] uppercase mb-6">{t('about.presence.tag')}</div>
+              <h2 className="text-4xl md:text-6xl font-black font-headline tracking-tighter text-on-surface uppercase mb-10 leading-[0.85]">
+                {t('about.presence.title')}
+              </h2>
+              <p className="text-on-surface-variant text-lg opacity-60 leading-relaxed font-light max-w-lg">
+                {t('about.presence.desc')}
+              </p>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-[100px] animate-pulse"></div>
+              <div className="neo-bento-card p-4 relative z-10 aspect-video flex items-center justify-center overflow-hidden group">
+                 <div className="text-on-surface/10 text-9xl font-black uppercase text-center select-none group-hover:scale-110 transition-transform duration-1000">{t('about.presence.global')}</div>
+                 <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary text-9xl animate-spin-slow">public</span>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trusted By Section */}
+        <section className="bg-surface py-32 reveal">
+          <div className="max-w-6xl mx-auto px-8">
+            <h2 className="text-center text-on-surface/30 text-[10px] font-bold tracking-[0.5em] uppercase mb-20">
+              {t('about.clients.tag')}
+            </h2>
+            <div className="flex flex-wrap justify-center items-center gap-x-24 gap-y-16">
+              {[logoMinikids, logoServpro, logoVanHeusen, logoFama].map((logo, i) => (
                 <img 
-                  src={member.img} 
-                  alt={member.name} 
-                  className="w-40 h-40 rounded-full mx-auto mb-6 object-cover border-4 border-surface-high shadow-lg"
+                  key={i} 
+                  src={logo} 
+                  className="h-10 w-auto transition-all grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110" 
+                  alt="Partner Logo" 
                 />
-                <h4 className="text-xl font-display font-medium mb-2">{member.name}</h4>
-                <p className="text-primary font-semibold text-sm">{member.role}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
-
-        <section className="text-center mb-20">
-          <h2 className="text-3xl font-display font-medium mb-12">{t('about.clients.title')}</h2>
-          <div className="flex justify-center gap-12 md:gap-20 items-center flex-wrap transition-all duration-300">
-            <img src={logoMinikids} alt="Minikids" className="h-10 w-auto object-contain dark:brightness-0 dark:invert" />
-            <img src={logoServpro} alt="Servpro" className="h-10 w-auto object-contain dark:brightness-0 dark:invert" />
-            <img src={logoVanHeusen} alt="Van Heusen" className="h-10 w-auto object-contain dark:brightness-0 dark:invert" />
-          </div>
-        </section>
-
-        <section className="text-center">
-          <h2 className="text-3xl font-display font-medium mb-6">{t('about.trajectory.title')}</h2>
-          <p className="text-on-surface-variant text-lg leading-relaxed max-w-[700px] mx-auto">
-            {t('about.trajectory.desc')}
-          </p>
-        </section>
-      </div>
+      </main>
     </div>
   );
 };

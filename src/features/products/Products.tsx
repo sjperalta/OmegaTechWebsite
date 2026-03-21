@@ -1,186 +1,183 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useReveal } from '../../hooks/useReveal';
 import Lightbox from '../../components/Lightbox';
-import logoFintera from '../../assets/products/fintera/fintera-logo-color.svg';
-import logoSecureX from '../../assets/products/securex/logo_securex.svg';
-import logoArenaGo from '../../assets/products/arena-go/logo_arenago_transparent.png';
-
-// Arena Go Screens
-import screenArenaGoHome from '../../assets/products/arena-go/home.png';
-import screenArenaGoTickets from '../../assets/products/arena-go/tickets.png';
-import screenArenaGoSubs from '../../assets/products/arena-go/subscriptions.png';
-import screenArenaGoAccount from '../../assets/products/arena-go/create-account.png';
-
-// Fintera Screens
-import screenFinteraHome from '../../assets/products/fintera/home.png';
-import screenFinteraAnalytics from '../../assets/products/fintera/analitycs.png';
-import screenFinteraAudit from '../../assets/products/fintera/audit.png';
-import screenFinteraContabilidad from '../../assets/products/fintera/contabilidad.png';
-import screenFinteraContracts from '../../assets/products/fintera/contracts.png';
-
-// SecureX Screens
-import screenSecureXHome from '../../assets/products/securex/home.png';
-import screenSecureXFinancial from '../../assets/products/securex/financial-analitycs.png';
-import screenSecureXIncidents from '../../assets/products/securex/incidents.png';
-import screenSecureXPatrol from '../../assets/products/securex/patrol.png';
-import screenSecureXScan from '../../assets/products/securex/scan.png';
+import imgArenaGo from '../../assets/products/arena-go/home.png';
+import imgFintera from '../../assets/products/fintera/home.png';
+import imgSecureX from '../../assets/products/securex/home.png';
 
 interface ProductsProps {
   onNavigate: (path: string) => void;
 }
 
 const Products: React.FC<ProductsProps> = ({ onNavigate }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<{ src: string, alt: string } | null>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   useReveal();
 
-  const productsList = [
-    { 
-      name: t('products.arenago.name'), 
-      price: t('products.arenago.price'),
-      tag: 'TICKETING & EVENTS',
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const products = [
+    {
+      id: 'arenago',
+      tag: 'Ticketing',
+      title: 'Arena Go',
+      tagline: t('products.arenago.tagline'),
       desc: t('products.arenago.desc'),
-      logo: logoArenaGo,
-      mainScreen: screenArenaGoHome,
-      hideText: true,
-      gallery: [screenArenaGoTickets, screenArenaGoSubs, screenArenaGoAccount],
-      features: [
-        t('products.arenago.feature1'),
-        t('products.arenago.feature2'),
-        t('products.arenago.feature3')
-      ]
+      features: (t('products.arenago.features', { returnObjects: true }) as string[]),
+      image: imgArenaGo
     },
-    { 
-      name: t('products.fintera.name'), 
-      price: t('products.fintera.price'),
-      tag: 'FINTECH',
+    {
+      id: 'fintera',
+      tag: 'Fintech',
+      title: 'Fintera',
+      tagline: t('products.fintera.tagline'),
       desc: t('products.fintera.desc'),
-      logo: logoFintera,
-      mainScreen: screenFinteraHome,
-      hideText: true,
-      gallery: [screenFinteraAnalytics, screenFinteraAudit, screenFinteraContabilidad, screenFinteraContracts],
-      features: [
-        t('products.fintera.feature1'),
-        t('products.fintera.feature2'),
-        t('products.fintera.feature3')
-      ]
+      features: (t('products.fintera.features', { returnObjects: true }) as string[]),
+      image: imgFintera
     },
-    { 
-      name: t('products.securex.name'), 
-      price: t('products.securex.price'),
-      tag: 'SECURITY & MANAGEMENT',
+    {
+      id: 'securex',
+      tag: 'Security',
+      title: 'SecureX',
+      tagline: t('products.securex.tagline'),
       desc: t('products.securex.desc'),
-      logo: logoSecureX,
-      mainScreen: screenSecureXHome,
-      showTextWithLogo: true,
-      gallery: [screenSecureXFinancial, screenSecureXIncidents, screenSecureXPatrol, screenSecureXScan],
-      features: [
-        t('products.securex.feature1'),
-        t('products.securex.feature2'),
-        t('products.securex.feature3')
-      ]
+      features: (t('products.securex.features', { returnObjects: true }) as string[]),
+      image: imgSecureX
     }
   ];
 
   return (
-    <div className="bg-surface pt-24 pb-20 lg:pb-32 mx-auto">
-      <div className="container mx-auto px-8 max-w-6xl">
-        <header className="mb-20 animate-slide-down">
-          <h1 className="text-5xl md:text-7xl font-display font-medium text-on-surface mb-6 tracking-tight leading-tight">
-            Our <span className="text-primary">Software Products</span>
-          </h1>
-          <p className="text-xl text-on-surface-variant max-w-[700px] leading-relaxed opacity-0 animate-[fadeIn_1s_ease-out_0.2s_forwards]">
-            {t('products.subtitle')}
-          </p>
-        </header>
+    <div className="relative min-h-screen bg-background overflow-hidden selection:bg-primary/30">
+      {/* Dynamic Spotlight Background */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(14, 165, 233, 0.05), transparent 80%)`
+        }}
+      />
+      
+      {/* Animated Background Elements */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px] animate-pulse"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[120px] animate-pulse [animation-delay:2s]"></div>
 
-        <div className="flex flex-col gap-[120px]">
-          {productsList.map((p, i) => (
-            <div 
-              key={i} 
-              className={`reveal animate-slide-up bg-surface-container-low rounded-[40px] border border-outline-variant p-8 md:p-20 flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 md:gap-20 items-center min-h-[600px] shadow-sm hover:-translate-y-2 hover:shadow-2xl hover:border-primary/20 transition-all duration-500`}
-            >
-              {/* Product Info */}
-              <div className="flex-1 flex flex-col gap-8 w-full">
-                <span className="text-primary text-sm font-bold tracking-widest uppercase">
-                  {p.tag}
-                </span>
+      <main className="relative z-10 pt-40 pb-20">
+        <section className="max-w-6xl mx-auto px-8 mb-32">
+          <div className="reveal">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-[fadeIn_1s_ease-out]">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span className="text-[10px] font-bold text-primary tracking-widest uppercase">{t('products.hero.badge')}</span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter leading-[0.8] text-on-surface uppercase mb-12 [text-wrap:balance]">
+              {(() => {
+                const title = t('products.hero.title');
+                const highlight = i18n.language === 'es' ? 'Transformación' : 'Transformation';
+                const parts = title.split(highlight);
+                if (parts.length < 2) return title;
+                return (
+                  <>
+                    <span className="opacity-90">{parts[0]}</span>
+                    <span className="text-primary">{highlight}</span>
+                    <span className="opacity-90">{parts[1]}</span>
+                  </>
+                );
+              })()}
+            </h1>
+            <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed opacity-60 font-body font-light tracking-tight">
+              {t('products.hero.desc')}
+            </p>
+          </div>
+        </section>
 
-                <div className="h-[60px] flex items-center gap-3">
-                  <img src={p.logo} alt={p.name} className="h-full max-w-[180px] object-contain" />
-                  {p.showTextWithLogo && (
-                    <span className="text-3xl md:text-[2.5rem] font-bold text-on-surface tracking-tight whitespace-nowrap">{p.name}</span>
-                  )}
-                </div>
-
-                {!p.hideText && !p.showTextWithLogo && (
-                  <h3 className="text-3xl md:text-[2.5rem] font-display font-medium text-on-surface m-0 tracking-tight">{p.name}</h3>
-                )}
-
-                <p className="text-on-surface-variant text-lg leading-relaxed max-w-[600px]">
-                  {p.desc}
-                </p>
-
-                {p.features && (
-                  <ul className="m-0 p-0 list-none text-base text-on-surface-variant flex flex-col gap-4">
-                    {p.features.map((f, idx) => (
-                      <li key={idx} className="flex gap-3 items-center">
-                        <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                <div className="flex gap-6 items-center mt-4">
-                  <span className="text-xl md:text-2xl font-bold text-on-surface">{p.price}</span>
-                  <button 
-                    onClick={() => onNavigate('/contact')}
-                    className="px-8 py-4 rounded-full bg-primary text-on-primary font-bold hover:-translate-y-1 transition-all duration-300 shadow-lg"
-                  >
-                    {t('products.view_details')}
-                  </button>
-                </div>
-              </div>
-
-              {/* Product Visuals / Gallery */}
-              <div className="flex-[1.2] flex flex-col gap-6 w-full">
-                {/* Main Large Image */}
-                <div 
-                  className="rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.4)] border border-outline-variant bg-surface-high aspect-[16/10] cursor-zoom-in hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] transition-all duration-500 group"
-                  onClick={() => setSelectedImage({ src: p.mainScreen, alt: p.name })}
-                >
-                  <img src={p.mainScreen} alt={`${p.name} main interface`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-
-                {/* Smaller Thumbnails Gallery */}
-                {p.gallery && (
-                  <div className="grid grid-cols-3 gap-4">
-                    {p.gallery.map((img, idx) => (
-                      <div 
-                        key={idx}
-                        className="rounded-xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.2)] border border-outline-variant aspect-[16/10] bg-surface-high cursor-zoom-in hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] transition-all duration-300 group"
-                        onClick={() => setSelectedImage({ src: img, alt: `${p.name} detail ${idx + 1}` })}
-                      >
-                        <img src={img} alt={`${p.name} detail ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+        <section className="max-w-6xl mx-auto px-8 space-y-40">
+          {products.map((product, index) => (
+            <div key={product.id} className="reveal">
+              <div className={`grid grid-cols-1 lg:grid-cols-2 gap-20 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+                <div className={`${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
+                  <div className="inline-block px-3 py-1 rounded-lg bg-primary/5 border border-primary/10 text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-6">
+                    {product.tag}
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-black font-headline tracking-tighter uppercase mb-6 text-on-surface">
+                    {product.title}
+                  </h2>
+                  <p className="text-xl font-bold text-primary/80 mb-8 leading-tight">
+                    {product.tagline}
+                  </p>
+                  <p className="text-on-surface-variant text-lg leading-relaxed opacity-70 mb-10 font-light">
+                    {product.desc}
+                  </p>
+                  
+                  <div className="space-y-4 mb-12">
+                    {product.features.map((feature, idx) => (
+                      <div key={idx} className="flex gap-4 items-start group">
+                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary group-hover:scale-150 transition-transform"></div>
+                        <p className="text-sm text-on-surface/60 font-body tracking-tight leading-relaxed">
+                          {feature}
+                        </p>
                       </div>
                     ))}
                   </div>
-                )}
+
+                  <button 
+                    onClick={() => onNavigate('/contact')}
+                    className="group flex items-center gap-4 text-xs font-black uppercase tracking-[0.3em] text-primary hover:text-on-surface transition-colors"
+                  >
+                    {t('products.view_details')}
+                    <span className="w-8 h-[1px] bg-primary group-hover:w-12 transition-all"></span>
+                  </button>
+                </div>
+
+                <div 
+                  className={`relative group cursor-zoom-in ${index % 2 !== 0 ? 'lg:order-1' : ''}`}
+                  onClick={() => setSelectedImage({ src: product.image, alt: product.title })}
+                >
+                  <div className="absolute inset-0 bg-primary/20 rounded-[40px] blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative neo-bento-card overflow-hidden aspect-video border-white/5 bg-white/[0.02]">
+                    <img 
+                      src={product.image} 
+                      alt={product.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
-        </div>
-      </div>
+        </section>
 
-      {selectedImage && (
-        <Lightbox 
-          src={selectedImage.src} 
-          alt={selectedImage.alt} 
-          onClose={() => setSelectedImage(null)} 
-        />
-      )}
+        {/* Support Section */}
+        <section className="bg-surface/30 backdrop-blur-3xl border-y border-white/5 py-40 px-8 mt-40">
+           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+              {[
+                { icon: 'support_agent', title: t('products.support.s1.title'), desc: t('products.support.s1.desc') },
+                { icon: 'update', title: t('products.support.s2.title'), desc: t('products.support.s2.desc') },
+                { icon: 'shield', title: t('products.support.s3.title'), desc: t('products.support.s3.desc') }
+              ].map((item, i) => (
+                <div key={i} className="text-center md:text-left reveal">
+                   <span className="material-symbols-outlined text-primary text-4xl mb-6">{item.icon}</span>
+                   <h4 className="text-xl font-black font-headline text-on-surface uppercase mb-4">{item.title}</h4>
+                   <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-light">{item.desc}</p>
+                </div>
+              ))}
+           </div>
+        </section>
+
+        {selectedImage && (
+          <Lightbox 
+            images={products.map(p => ({ src: p.image, alt: p.title }))}
+            currentIndex={products.findIndex(p => p.image === selectedImage.src)}
+            onClose={() => setSelectedImage(null)}
+          />
+        )}
+      </main>
     </div>
   );
 };

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useReveal } from '../../hooks/useReveal';
 
 interface ServicesProps {
   onNavigate: (path: string) => void;
@@ -7,120 +8,131 @@ interface ServicesProps {
 
 const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
   const { t } = useTranslation();
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  useReveal();
 
-  const servicesList = [
-    { 
-      title: t('services.list.platforms.title'), 
-      desc: t('services.list.platforms.desc')
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const services = [
+    {
+      id: 'software',
+      icon: 'code',
+      title: t('services.software.title'),
+      desc: t('services.software.desc'),
     },
-    { 
-      title: t('services.list.fintech.title'), 
-      desc: t('services.list.fintech.desc')
+    {
+      id: 'consulting',
+      icon: 'insights',
+      title: t('services.consulting.title'),
+      desc: t('services.consulting.desc'),
     },
-    { 
-      title: t('services.list.security.title'), 
-      desc: t('services.list.security.desc')
+    {
+      id: 'outsourcing',
+      icon: 'handshake',
+      title: t('services.outsourcing.title'),
+      desc: t('services.outsourcing.desc'),
     },
-    { 
-      title: t('services.list.consulting.title'), 
-      desc: t('services.list.consulting.desc')
+    {
+      id: 'staff-augmentation',
+      icon: 'group_add',
+      title: t('services.staff-augmentation.title'),
+      desc: t('services.staff-augmentation.desc'),
     },
-    { 
-      title: t('services.list.staff.title'), 
-      desc: t('services.list.staff.desc')
+    {
+      id: 'uxui',
+      icon: 'draw',
+      title: t('services.uxui.title'),
+      desc: t('services.uxui.desc'),
+    },
+    {
+      id: 'mobile',
+      icon: 'phone_iphone',
+      title: t('services.mobile.title'),
+      desc: t('services.mobile.desc'),
     }
   ];
 
   return (
-    <div className="bg-surface min-h-screen pt-24 pb-24">
-      <div className="container mx-auto px-8 max-w-6xl">
-        {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div className="max-w-3xl">
-            <div className="text-primary font-bold text-[10px] tracking-[0.3em] uppercase mb-4 group cursor-default flex items-center gap-2">
-              <div className="data-pulse"></div>
-              {t('services.tag')}
+    <div className="relative min-h-screen bg-background overflow-hidden selection:bg-primary/30">
+      {/* Dynamic Spotlight Background */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(14, 165, 233, 0.05), transparent 80%)`
+        }}
+      />
+
+      <main className="relative z-10 pt-40 pb-20">
+        <section className="max-w-6xl mx-auto px-8 mb-32">
+          <div className="reveal">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-[fadeIn_1s_ease-out]">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span className="text-[10px] font-bold text-primary tracking-widest uppercase">{t('services.hero.badge')}</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter text-on-surface uppercase leading-[0.9]">
-              {t('services.title')} <br />
-              <span className="text-primary">{t('services.title.highlight')}</span>
+            <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter leading-[0.8] text-on-surface uppercase mb-12 [text-wrap:balance]">
+              Digital <span className="text-primary">Ecosystems</span>
             </h1>
+            <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed opacity-60 font-body font-light tracking-tight">
+              {t('services.hero.desc')}
+            </p>
           </div>
-          <p className="text-on-surface-variant text-base md:text-lg max-w-sm opacity-60 leading-relaxed font-body">
-            {t('services.subtitle')}
-          </p>
-        </div>
+        </section>
 
-        {/* Services Grid - Bento Style */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          {/* Main Consulting Service - Large Bento */}
-          <div className="md:col-span-8 glass-card rounded-3xl p-12 hover:border-primary/30 transition-all group flex flex-col md:flex-row gap-12 items-center hover:shadow-primary/5 hover:shadow-2xl">
-            <div className="flex-1">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6 font-label uppercase tracking-widest text-[10px] text-primary">
-                Key Strategic Service
-              </div>
-              <h2 className="text-3xl md:text-5xl font-black font-headline text-on-surface uppercase tracking-tight mb-6">
-                {t('services.consulting.card.title')}
-              </h2>
-              <p className="text-on-surface-variant text-lg opacity-60 leading-relaxed mb-8">
-                {t('services.consulting.card.desc')}
-              </p>
-              <button 
-                onClick={() => onNavigate('/contact')}
-                className="bg-primary text-on-primary px-8 py-3 rounded font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-all flex items-center gap-2"
-              >
-                {t('services.consulting.card.button')}
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </button>
-            </div>
-            <div className="flex-1 w-full h-64 md:h-full bg-surface-container-low rounded-2xl border border-outline-variant/10 relative overflow-hidden flex items-center justify-center p-8">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
-               <span className="material-symbols-outlined text-primary text-[8rem] opacity-20">strategy</span>
-               <div className="absolute bottom-4 left-4 flex gap-1">
-                 {[1,2,3,4].map(i => <div key={i} className="w-1.5 h-1.5 rounded-full bg-primary/30"></div>)}
-               </div>
-            </div>
-          </div>
-
-          {/* Side Column Services */}
-          <div className="md:col-span-4 flex flex-col gap-6">
-            {servicesList.slice(0, 2).map((s, i) => (
-              <div key={i} className="glass-card rounded-2xl p-10 hover:border-primary/30 transition-all group cursor-pointer h-full hover:shadow-primary/5 hover:shadow-2xl"
-                onClick={() => onNavigate('/contact')}
-              >
-                <div className="flex justify-between items-start mb-6">
-                  <span className="text-primary/20 text-4xl font-black font-headline leading-none">0{i+1}</span>
-                  <span className="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">
-                    {i === 0 ? 'developer_mode' : 'account_balance'}
-                  </span>
-                </div>
-                <h3 className="text-xl md:text-2xl font-black font-headline text-on-surface uppercase mb-3 leading-tight">{s.title}</h3>
-                <p className="text-on-surface-variant text-xs opacity-60 leading-relaxed">
-                  {s.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom Row Services */}
-          {servicesList.slice(2, 5).map((s, i) => (
-            <div key={i} className="md:col-span-4 glass-card rounded-2xl p-10 hover:border-primary/30 transition-all group cursor-pointer hover:shadow-primary/5 hover:shadow-2xl"
+        <section className="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div 
+              key={service.id}
+              className="neo-bento-card p-12 group hover:scale-[1.02] transition-all duration-500 reveal cursor-pointer hover:bg-primary/5 h-full flex flex-col"
+              style={{ transitionDelay: `${index * 100}ms` }}
               onClick={() => onNavigate('/contact')}
             >
-              <div className="flex justify-between items-start mb-6">
-                <span className="text-primary/20 text-4xl font-black font-headline leading-none">0{i+3}</span>
-                <span className="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">
-                  {i === 0 ? 'security' : i === 1 ? 'forum' : 'groups'}
+              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:rotate-6 transition-all duration-500">
+                <span className="material-symbols-outlined text-primary text-4xl group-hover:text-on-primary transition-colors">
+                  {service.icon}
                 </span>
               </div>
-              <h3 className="text-xl md:text-2xl font-black font-headline text-on-surface uppercase mb-3 leading-tight">{s.title}</h3>
-              <p className="text-on-surface-variant text-xs opacity-60 leading-relaxed">
-                {s.desc}
+              <h3 className="text-2xl font-black font-headline text-on-surface uppercase mb-4 leading-none group-hover:text-primary transition-colors">
+                {service.title}
+              </h3>
+              <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-body font-light flex-1">
+                {service.desc}
               </p>
+              <div className="mt-8 pt-8 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="inline-flex items-center gap-2 text-primary font-bold text-[10px] uppercase tracking-widest">
+                  {t('services.cta.inquire')} <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                </span>
+              </div>
             </div>
           ))}
-        </div>
-      </div>
+        </section>
+
+        {/* Call to Action Bar */}
+        <section className="max-w-6xl mx-auto px-8 py-40">
+           <div className="neo-bento-card p-16 md:p-24 bg-primary text-on-primary flex flex-col md:flex-row items-center justify-between gap-12 reveal overflow-hidden group">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-[80px] -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000"></div>
+              <div className="relative z-10 max-w-xl text-center md:text-left">
+                 <h2 className="text-4xl md:text-5xl font-black font-headline tracking-tighter uppercase mb-6 leading-none">
+                    {t('services.cta.title')}
+                 </h2>
+                 <p className="text-on-primary text-lg opacity-80 font-light">
+                    {t('services.cta.desc')}
+                 </p>
+              </div>
+              <button 
+                onClick={() => onNavigate('/contact')}
+                className="relative z-10 bg-on-primary text-primary px-12 py-6 rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-110 active:scale-95 transition-all shadow-2xl"
+              >
+                {t('services.cta.button')}
+              </button>
+           </div>
+        </section>
+      </main>
     </div>
   );
 };

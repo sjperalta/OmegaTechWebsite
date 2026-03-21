@@ -7,6 +7,8 @@ import { About } from './features/about';
 import { Faq } from './features/faq';
 import { Contact } from './features/contact';
 import { AppProvider } from './context/AppContext';
+import CustomCursor from './components/CustomCursor';
+import WhatsAppButton from './components/WhatsAppButton';
 
 const App: React.FC = () => {
   const [currentPath, setCurrentPath] = useState(window.location.pathname || '/');
@@ -48,6 +50,8 @@ const App: React.FC = () => {
 
   return (
     <AppProvider>
+      <CustomCursor />
+      <WhatsAppButton />
       <Layout currentPath={currentPath} onNavigate={handleNavigate}>
         {renderPage()}
       </Layout>
