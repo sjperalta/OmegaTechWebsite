@@ -138,9 +138,9 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 pointer-events-none animate-[fadeIn_1.5s_ease-out_0.8s_both]">
           <span className="text-[9px] font-bold text-primary/40 tracking-[0.4em] uppercase font-label">Scroll</span>
           <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center pt-1.5 backdrop-blur-sm">
-            <div className="w-1 h-2.5 bg-primary rounded-full animate-[scrollDot_1.5s_ease-in-out_infinite]"></div>
+            <div className="w-1 h-2.5 bg-primary rounded-full animate-scroll-dot"></div>
           </div>
-          <span className="material-symbols-outlined text-primary/30 animate-[fadeInDown_1.5s_ease-in-out_infinite]" style={{fontSize:"16px", marginTop:"-4px"}}>keyboard_arrow_down</span>
+          <span className="material-symbols-outlined text-primary/30 animate-fade-in-down" style={{fontSize:"16px", marginTop:"-4px"}}>keyboard_arrow_down</span>
         </div>
       </section>
 
