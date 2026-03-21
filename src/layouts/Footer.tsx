@@ -5,64 +5,69 @@ const Footer: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-surface-low py-20 border-t border-outline-variant">
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-16 mb-20">
-          {/* Company Info */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-6 h-6 bg-primary rounded-md"></div>
-              <span className="font-bold text-xl tracking-tight">OMEGATECH</span>
+    <footer className="bg-[#131313] w-full py-12 px-8 text-white">
+      <div className="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-8 pt-12">
+        <div className="col-span-1 md:col-span-1">
+          <div className="text-lg font-black text-white mb-6 font-headline uppercase leading-none">
+            OmegaTech
+          </div>
+          <p className="text-white/60 text-xs leading-relaxed max-w-xs">
+            {t('footer.tagline')}
+          </p>
+          <div className="flex flex-col gap-3 mt-8">
+            <a href="mailto:info@omegatech.dev" className="flex items-center gap-3 text-white/40 hover:text-primary transition-colors text-xs group">
+              <span className="material-symbols-outlined text-lg opacity-50 group-hover:opacity-100 transition-opacity">mail</span>
+              info@omegatech.dev
+            </a>
+            <a href="tel:+50431848112" className="flex items-center gap-3 text-white/40 hover:text-primary transition-colors text-xs group">
+              <span className="material-symbols-outlined text-lg opacity-50 group-hover:opacity-100 transition-opacity">call</span>
+              +504 31848112
+            </a>
+            <div className="flex items-center gap-3 text-white/40 text-xs">
+              <span className="material-symbols-outlined text-lg opacity-50">location_on</span>
+              Pto Cortes, Cienguita.
             </div>
-            <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
-              {t('contact.info.legal.desc')}<br />
-              {t('footer.tagline')}
-            </p>
-            <div className="flex gap-4">
-              {/* Social Placeholders */}
-              <div className="w-5 h-5 bg-surface-highest rounded-sm"></div>
-              <div className="w-5 h-5 bg-surface-highest rounded-sm"></div>
-              <div className="w-5 h-5 bg-surface-highest rounded-sm"></div>
-            </div>
-          </div>
-
-          {/* Solutions */}
-          <div>
-            <h4 className="mb-6 text-base font-display">{t('footer.solutions')}</h4>
-            <ul className="list-none p-0 grid gap-3">
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">ArenaGo</a></li>
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">Fintera</a></li>
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">SecureX</a></li>
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">IoT Hub</a></li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="mb-6 text-base font-display">{t('footer.company')}</h4>
-            <ul className="list-none p-0 grid gap-3">
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">{t('nav.about')}</a></li>
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">{t('nav.services')}</a></li>
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">{t('footer.careers')}</a></li>
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">{t('footer.press')}</a></li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="mb-6 text-base font-display">{t('footer.legal')}</h4>
-            <ul className="list-none p-0 grid gap-3">
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">{t('footer.privacy')}</a></li>
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">{t('footer.terms')}</a></li>
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">{t('footer.security')}</a></li>
-              <li><a href="#" className="text-on-surface-variant hover:text-primary transition-colors text-sm">{t('footer.cookies')}</a></li>
-            </ul>
           </div>
         </div>
 
-        <div className="border-t border-outline-variant pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant text-xs">
-          <span>© 2026 {t('contact.info.legal.desc')} {t('footer.rights')}</span>
-          <span>{t('footer.made_with')}</span>
+        <div className="space-y-4">
+          <h5 className="text-primary font-bold text-sm uppercase tracking-widest">{t('footer.solutions')}</h5>
+          <ul className="space-y-2 text-white/60 text-xs font-body">
+            <li><a className="hover:text-primary transition-colors" href="#">ArenaGo Ticketing</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Fintera Payments</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">SecureX Control</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">IoT Hub</a></li>
+          </ul>
+        </div>
+
+        <div className="space-y-4">
+          <h5 className="text-primary font-bold text-sm uppercase tracking-widest">{t('footer.company')}</h5>
+          <ul className="space-y-2 text-white/60 text-xs font-body">
+            <li><a className="hover:text-primary transition-colors" href="#">{t('nav.about')}</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">{t('nav.services')}</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">{t('footer.careers')}</a></li>
+            <li><a className="hover:text-primary transition-colors" href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div className="space-y-4">
+          <h5 className="text-primary font-bold text-sm uppercase tracking-widest">{t('footer.legal')}</h5>
+          <div className="flex flex-col gap-2 font-body text-xs tracking-wide text-white/60">
+            <a className="hover:text-primary underline-offset-4 hover:underline" href="#">{t('footer.privacy')}</a>
+            <a className="hover:text-primary underline-offset-4 hover:underline" href="#">{t('footer.terms')}</a>
+            <a className="hover:text-primary underline-offset-4 hover:underline" href="#">{t('footer.security')}</a>
+            <a className="hover:text-primary underline-offset-4 hover:underline" href="#">{t('footer.contact')}</a>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-8 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
+        <span className="text-white/30 text-[10px] tracking-widest font-label uppercase">
+          © {new Date().getFullYear()} OmegaTech. All Rights Reserved.
+        </span>
+        <div className="flex items-center gap-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(173,199,255,0.8)]"></div>
+          <span className="text-[10px] font-label text-white/40 uppercase tracking-widest">Global Status: Operational</span>
         </div>
       </div>
     </footer>

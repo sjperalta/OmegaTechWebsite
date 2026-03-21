@@ -1,5 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import logoMinikids from '../../assets/customers/minokids/minikids-logo.svg';
+import logoServpro from '../../assets/customers/servpro/servpro-logo.png';
+import logoVanHeusen from '../../assets/customers/vanheusen/vanheusen-logo.svg';
 import { useReveal } from '../../hooks/useReveal';
 import teamImage from '../../assets/about-team.png';
 
@@ -8,9 +11,9 @@ const About: React.FC = () => {
   useReveal();
 
   return (
-    <div className="py-24 md:py-32">
-      <div className="container max-w-[900px]">
-        <header className="text-center mb-20 animate-slide-down">
+    <div className="pt-24 pb-24 md:pb-32">
+      <div className="container mx-auto px-8 max-w-6xl">
+        <header className="mb-20 animate-slide-down">
           <h1 className="text-5xl md:text-7xl font-display font-medium tracking-tight mb-8">
             {t('about.title')} <span className="text-primary">{t('about.title.highlight')}</span>
           </h1>
@@ -92,10 +95,10 @@ const About: React.FC = () => {
 
         <section className="text-center mb-20">
           <h2 className="text-3xl font-display font-medium mb-12">{t('about.clients.title')}</h2>
-          <div className="flex justify-center gap-12 md:gap-20 items-center flex-wrap grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-            <img src="/src/assets/customers/minokids/minikids-logo.svg" alt="Minikids" className="h-10" />
-            <img src="/src/assets/customers/servpro/servpro-logo.png" alt="Servpro" className="h-10" />
-            <img src="/src/assets/customers/vanheusen/vanheusen-logo.svg" alt="Van Heusen" className="h-10" />
+          <div className="flex justify-center gap-12 md:gap-20 items-center flex-wrap transition-all duration-300">
+            <img src={logoMinikids} alt="Minikids" className="h-10 w-auto object-contain dark:brightness-0 dark:invert" />
+            <img src={logoServpro} alt="Servpro" className="h-10 w-auto object-contain dark:brightness-0 dark:invert" />
+            <img src={logoVanHeusen} alt="Van Heusen" className="h-10 w-auto object-contain dark:brightness-0 dark:invert" />
           </div>
         </section>
 
