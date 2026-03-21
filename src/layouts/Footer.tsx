@@ -64,10 +64,6 @@ const Footer: React.FC = () => {
         <span className="text-white/30 text-[10px] tracking-widest font-label uppercase">
           © {new Date().getFullYear()} OmegaTech. {t('footer.rights')}
         </span>
-        <div className="flex items-center gap-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(173,199,255,0.8)]"></div>
-          <span className="text-[10px] font-label text-white/40 uppercase tracking-widest">{t('footer.status')}: {t('footer.status.operational')}</span>
-        </div>
       </div>
     </footer>
   );

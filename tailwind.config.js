@@ -110,6 +110,15 @@ export default {
         fadeIn: {
           from: { opacity: '0' },
           to: { opacity: '1' },
+        },
+        scrollDot: {
+          '0%, 20%': { transform: 'translateY(0)', opacity: '1' },
+          '80%, 100%': { transform: 'translateY(18px)', opacity: '0' },
+        },
+        fadeInDown: {
+          '0%, 20%': { transform: 'translateY(-8px)', opacity: '0' },
+          '50%': { transform: 'translateY(0)', opacity: '1' },
+          '80%, 100%': { transform: 'translateY(8px)', opacity: '0' },
         }
       },
       animation: {
