@@ -114,19 +114,19 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
 
         {/* Call to Action Bar */}
         <section className="max-w-6xl mx-auto px-8 py-40">
-           <div className="neo-bento-card p-16 md:p-24 bg-primary text-on-primary flex flex-col md:flex-row items-center justify-between gap-12 reveal overflow-hidden group">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-[80px] -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000"></div>
+           <div className="neo-bento-card p-16 md:p-24 bg-primary/5 dark:bg-primary text-on-surface dark:text-on-primary flex flex-col md:flex-row items-center justify-between gap-12 reveal overflow-hidden group border-primary/20 dark:border-white/10">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 dark:bg-white/10 rounded-full blur-[80px] -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000"></div>
               <div className="relative z-10 max-w-xl text-center md:text-left">
                  <h2 className="text-4xl md:text-5xl font-black font-headline tracking-tighter uppercase mb-6 leading-none">
                     {t('services.cta.title')}
                  </h2>
-                 <p className="text-on-primary text-lg opacity-80 font-light">
+                 <p className="text-on-surface-variant dark:text-on-primary/80 text-lg font-light">
                     {t('services.cta.desc')}
                  </p>
               </div>
               <button 
                 onClick={() => onNavigate('/contact')}
-                className="relative z-10 bg-on-primary text-primary px-12 py-6 rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-110 active:scale-95 transition-all shadow-2xl"
+                className="relative z-10 bg-primary dark:bg-on-primary text-on-primary dark:text-primary px-12 py-6 rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-110 active:scale-95 transition-all shadow-2xl shadow-primary/20 dark:shadow-none"
               >
                 {t('services.cta.button')}
               </button>

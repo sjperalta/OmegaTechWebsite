@@ -6,6 +6,7 @@ import logoServpro from '../../assets/customers/servpro/logo-servpro.webp';
 import logoVanHeusen from '../../assets/customers/vanheusen/van-heusen-white.svg';
 import logoFama from '../../assets/customers/fama/logo-fama.webp';
 import imgSergio from '../../assets/people/sergio-peralta-ceo.png';
+import imgDavid from '../../assets/people/david-mendez-dev-manager.png';
 import imgKesia from '../../assets/people/kesia-peralta-qa-manager.png';
 
 const About: React.FC = () => {
@@ -130,22 +131,42 @@ const About: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
             {/* Sergio Peralta */}
             <div className="neo-bento-card group overflow-hidden relative border-primary/10 hover:border-primary/30 transition-colors duration-500">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="flex flex-col h-full">
-                <div className="relative h-96 w-full overflow-hidden bg-surface-container-low border-b border-white/5">
+                <div className="relative h-80 w-full overflow-hidden bg-surface-container-low border-b border-white/5">
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10 w-full h-[101%] pointer-events-none"></div>
                   <img src={imgSergio} alt={t('about.team.sergio.name')} className="object-cover object-top w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
                 </div>
-                <div className="p-10 relative z-20 -mt-16">
+                <div className="p-8 relative z-20 -mt-12">
                   <div className="inline-flex items-center gap-2 text-primary font-bold text-[10px] tracking-[0.2em] uppercase mb-4 bg-surface border border-white/10 px-4 py-2 rounded-sm shadow-xl backdrop-blur-md">
                     {t('about.team.sergio.role')}
                   </div>
-                  <h3 className="text-3xl font-black font-headline text-on-surface uppercase tracking-tight mb-4">{t('about.team.sergio.name')}</h3>
-                  <p className="text-on-surface-variant text-sm opacity-80 leading-relaxed font-light">
+                  <h3 className="text-2xl font-black font-headline text-on-surface uppercase tracking-tight mb-4">{t('about.team.sergio.name')}</h3>
+                  <p className="text-on-surface-variant text-xs opacity-80 leading-relaxed font-light">
                     {t('about.team.sergio.bio')}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* David Méndez */}
+            <div className="neo-bento-card group overflow-hidden relative border-primary/10 hover:border-primary/30 transition-colors duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="flex flex-col h-full">
+                <div className="relative h-80 w-full overflow-hidden bg-surface-container-low border-b border-white/5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10 w-full h-[101%] pointer-events-none"></div>
+                  <img src={imgDavid} alt={t('about.team.david.name')} className="object-cover object-top w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
+                </div>
+                <div className="p-8 relative z-20 -mt-12">
+                  <div className="inline-flex items-center gap-2 text-primary font-bold text-[10px] tracking-[0.2em] uppercase mb-4 bg-surface border border-white/10 px-4 py-2 rounded-sm shadow-xl backdrop-blur-md">
+                    {t('about.team.david.role')}
+                  </div>
+                  <h3 className="text-2xl font-black font-headline text-on-surface uppercase tracking-tight mb-4">{t('about.team.david.name')}</h3>
+                  <p className="text-on-surface-variant text-xs opacity-80 leading-relaxed font-light">
+                    {t('about.team.david.bio')}
                   </p>
                 </div>
               </div>
@@ -155,16 +176,16 @@ const About: React.FC = () => {
             <div className="neo-bento-card group overflow-hidden relative border-primary/10 hover:border-primary/30 transition-colors duration-500">
               <div className="absolute inset-0 bg-gradient-to-bl from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="flex flex-col h-full">
-                <div className="relative h-96 w-full overflow-hidden bg-surface-container-low border-b border-white/5">
+                <div className="relative h-80 w-full overflow-hidden bg-surface-container-low border-b border-white/5">
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10 w-full h-[101%] pointer-events-none"></div>
                   <img src={imgKesia} alt={t('about.team.kesia.name')} className="object-cover object-top w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
                 </div>
-                <div className="p-10 relative z-20 -mt-16">
+                <div className="p-8 relative z-20 -mt-12">
                   <div className="inline-flex items-center gap-2 text-primary font-bold text-[10px] tracking-[0.2em] uppercase mb-4 bg-surface border border-white/10 px-4 py-2 rounded-sm shadow-xl backdrop-blur-md">
                     {t('about.team.kesia.role')}
                   </div>
-                  <h3 className="text-3xl font-black font-headline text-on-surface uppercase tracking-tight mb-4">{t('about.team.kesia.name')}</h3>
-                  <p className="text-on-surface-variant text-sm opacity-80 leading-relaxed font-light">
+                  <h3 className="text-2xl font-black font-headline text-on-surface uppercase tracking-tight mb-4">{t('about.team.kesia.name')}</h3>
+                  <p className="text-on-surface-variant text-xs opacity-80 leading-relaxed font-light">
                     {t('about.team.kesia.bio')}
                   </p>
                 </div>
@@ -188,9 +209,9 @@ const About: React.FC = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-[100px] animate-pulse"></div>
               <div className="neo-bento-card p-4 relative z-10 aspect-video flex items-center justify-center overflow-hidden group">
-                 <div className="text-on-surface/10 text-9xl font-black uppercase text-center select-none group-hover:scale-110 transition-transform duration-1000">{t('about.presence.global')}</div>
+                 <div className="text-on-surface/10 text-6xl font-black uppercase text-center select-none group-hover:scale-110 transition-transform duration-1000">{t('about.presence.global')}</div>
                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="material-symbols-outlined text-primary text-9xl animate-spin-slow">public</span>
+                    <span className="material-symbols-outlined text-primary text-6xl animate-spin-slow">public</span>
                  </div>
               </div>
             </div>
@@ -204,13 +225,18 @@ const About: React.FC = () => {
               {t('about.clients.tag')}
             </h2>
             <div className="flex flex-wrap justify-center items-center gap-x-24 gap-y-16">
-              {[logoMinikids, logoServpro, logoVanHeusen, logoFama].map((logo, i) => (
+              {[
+                { src: logoMinikids, invert: false },
+                { src: logoServpro, invert: false },
+                { src: logoVanHeusen, invert: true },
+                { src: logoFama, invert: true }
+              ].map((logo, i) => (
                 <img 
                   key={i} 
-                  src={logo} 
+                  src={logo.src} 
                   width="150"
                   height="40"
-                  className="h-10 w-auto transition-all grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110" 
+                  className={`h-10 w-auto transition-all grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110 ${logo.invert ? 'invert dark:invert-0' : ''}`} 
                   alt="Partner Logo" 
                 />
               ))}
