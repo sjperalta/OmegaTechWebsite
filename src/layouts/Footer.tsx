@@ -15,16 +15,16 @@ const Footer: React.FC = () => {
             {t('footer.tagline')}
           </p>
           <div className="flex flex-col gap-3 mt-8">
-            <a href="mailto:info@omegatech.dev" className="flex items-center gap-3 text-white/40 hover:text-primary transition-colors text-xs group">
-              <span className="material-symbols-outlined text-lg opacity-50 group-hover:opacity-100 transition-opacity">mail</span>
+            <a href="mailto:info@omegatech.dev" className="flex items-center gap-3 text-white/70 hover:text-primary transition-colors text-xs group">
+              <span className="material-symbols-outlined text-lg opacity-70 group-hover:opacity-100 transition-opacity">mail</span>
               info@omegatech.dev
             </a>
-            <a href="tel:+50499405708" className="flex items-center gap-3 text-white/40 hover:text-primary transition-colors text-xs group">
-              <span className="material-symbols-outlined text-lg opacity-50 group-hover:opacity-100 transition-opacity">call</span>
+            <a href="tel:+50499405708" className="flex items-center gap-3 text-white/70 hover:text-primary transition-colors text-xs group">
+              <span className="material-symbols-outlined text-lg opacity-70 group-hover:opacity-100 transition-opacity">call</span>
               +504 9940 5708
             </a>
-            <div className="flex items-center gap-3 text-white/40 text-xs">
-              <span className="material-symbols-outlined text-lg opacity-50">location_on</span>
+            <div className="flex items-center gap-3 text-white/70 text-xs">
+              <span className="material-symbols-outlined text-lg opacity-70">location_on</span>
               {t('footer.location')}
             </div>
           </div>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-6xl mx-auto px-8 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
-        <span className="text-white/30 text-[10px] tracking-widest font-label uppercase">
+        <span className="text-white/60 text-[10px] tracking-widest font-label uppercase">
           © {new Date().getFullYear()} OmegaTech. {t('footer.rights')}
         </span>
       </div>

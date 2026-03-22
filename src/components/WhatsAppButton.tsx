@@ -17,7 +17,7 @@ const WhatsAppButton: React.FC = () => {
       <div className="absolute inset-0 bg-[#25D366] rounded-full blur-xl opacity-20 group-hover:opacity-40 animate-pulse transition-opacity"></div>
       
       {/* Button Body */}
-      <div className="relative flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-4 rounded-2xl shadow-2xl transition-all duration-500 hover:scale-110 active:scale-95 group-hover:shadow-[#25D366]/40">
+      <div className="relative flex items-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-black px-6 py-4 rounded-2xl shadow-2xl transition-all duration-500 hover:scale-110 active:scale-95 group-hover:shadow-[#25D366]/40">
         <svg 
           viewBox="0 0 24 24" 
           className="w-6 h-6 fill-current"

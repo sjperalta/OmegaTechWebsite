@@ -99,7 +99,7 @@ const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
             </button>
           </div>
           <button
-            className="hidden md:flex bg-primary text-on-primary px-6 py-2 rounded-full font-black hover:scale-105 active:scale-95 transition-all text-[10px] uppercase tracking-widest h-9 items-center shadow-lg shadow-primary/20"
+            className="hidden md:flex bg-primary text-slate-950 px-6 py-2 rounded-full font-black hover:scale-105 active:scale-95 transition-all text-[10px] uppercase tracking-widest h-9 items-center shadow-lg shadow-primary/20"
             onClick={() => onNavigate('/contact')}
           >
             {t('nav.cta')}

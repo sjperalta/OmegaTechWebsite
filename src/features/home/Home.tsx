@@ -68,14 +68,14 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               })()}
             </h1>
             
-            <p className="text-on-surface-variant text-lg md:text-xl max-w-xl mx-auto lg:mx-0 leading-relaxed mb-12 opacity-60 font-body font-light tracking-tight">
+            <p className="text-on-surface-variant text-lg md:text-xl max-w-xl mx-auto lg:mx-0 leading-relaxed mb-12 opacity-90 font-body font-light tracking-tight">
               {t('home.hero.subtitle')}
             </p>
             
             <div className="flex flex-wrap gap-6 justify-center lg:justify-start items-center">
               <button 
                 onClick={() => onNavigate('/products')}
-                className="group relative bg-primary text-on-primary px-10 py-5 rounded-2xl font-bold uppercase tracking-widest text-xs overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/40 active:scale-95 shadow-lg shadow-primary/20"
+                className="group relative bg-primary text-slate-950 px-10 py-5 rounded-2xl font-bold uppercase tracking-widest text-xs overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/40 active:scale-95 shadow-lg shadow-primary/20"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   {t('home.hero.cta.products')}
@@ -154,7 +154,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 {t('home.products.title')}
               </h2>
             </div>
-            <p className="text-on-surface-variant text-lg max-w-xs opacity-60 leading-relaxed font-body font-light">
+            <p className="text-on-surface-variant text-lg max-w-xs opacity-80 leading-relaxed font-body font-light">
               {t('home.products.subtitle')}
             </p>
           </div>
@@ -170,10 +170,17 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   <span className="material-symbols-outlined text-primary text-4xl">arrow_outward</span>
                 </div>
                 <div className="flex justify-between items-start mb-10">
-                  <img src={logoArenaGo} alt="ArenaGo Platform Logo" width="492" height="96" className="h-24 w-auto group-hover:scale-110 transition-transform duration-500" />
+                  <img 
+                    src={logoArenaGo} 
+                    alt="ArenaGo Platform Logo" 
+                    width="1311" 
+                    height="256" 
+                    style={{ aspectRatio: '1311 / 256' }}
+                    className="h-24 w-auto group-hover:scale-110 transition-transform duration-500" 
+                  />
                   <span className="material-symbols-outlined text-primary/40 text-4xl">rocket_launch</span>
                 </div>
-                <p className="text-on-surface-variant text-xl opacity-60 leading-relaxed max-w-xl font-light">
+                <p className="text-on-surface-variant text-xl opacity-80 leading-relaxed max-w-xl font-light">
                   {t('products.arenago.desc')}
                 </p>
               </div>
@@ -187,7 +194,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   <img src={logoFintera} alt="Fintera Logo" width="183" height="56" className="h-14 w-auto group-hover:scale-110 transition-transform" />
                   <span className="material-symbols-outlined text-primary/40 text-3xl">payments</span>
                 </div>
-                <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-light">
+                <p className="text-on-surface-variant text-sm opacity-80 leading-relaxed font-light">
                   {t('products.fintera.desc')}
                 </p>
               </div>
@@ -201,7 +208,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   </div>
                   <span className="material-symbols-outlined text-primary/40 text-3xl">security</span>
                 </div>
-                <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-light">
+                <p className="text-on-surface-variant text-sm opacity-80 leading-relaxed font-light">
                    {t('products.securex.desc')}
                 </p>
               </div>
@@ -218,7 +225,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             <h2 className="text-5xl md:text-8xl font-black font-headline tracking-tighter text-on-surface uppercase mb-10 leading-[0.85]">
               {t('home.philosophy.title')}
             </h2>
-            <p className="text-on-surface-variant text-xl opacity-60 leading-relaxed font-light max-w-lg">
+            <p className="text-on-surface-variant text-xl opacity-80 leading-relaxed font-light max-w-lg">
               {t('home.philosophy.desc')}
             </p>
           </div>
