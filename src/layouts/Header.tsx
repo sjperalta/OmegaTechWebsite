@@ -48,6 +48,8 @@ const Header: React.FC<HeaderProps> = ({ currentPath, onNavigate }) => {
         >
           <img
             alt="OmegaTech Logo"
+            width="100"
+            height="36"
             className="h-9 w-auto transition-all group-hover:scale-110 group-hover:rotate-3"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHYIrve3MhUl_DDPSqpA0NmWZNRHY2SMrUNPesecnBAglK6Wyihwa5ZrjRpnSMwqCMyL2rk8LRE63o5yb3Sv5GoqZrHN-P5ldy_JpIWZRlmd2Gamkx4PM7gCDAcF8K8ovaxVXtju8vRZMU2Oi0ydSlCAIWRDFpqOOXql38TOmBfXLm-LQjwW2_FDdGcW6wkKAejQrTsuJn1VY1PZBVWD12JZ872xagUkKXm1QrpIy3BS5IjekU8wlstBsdx_yxYebTpVWUDnd0Pdc"
           />

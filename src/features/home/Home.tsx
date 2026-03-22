@@ -96,10 +96,10 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 {t('home.trusted.tag')}
               </div>
               <div className="flex flex-wrap gap-x-14 gap-y-10 items-center justify-center lg:justify-start">
-                <img src={logoMinikids} alt="Minikids" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
-                <img src={logoServpro} alt="Servpro" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
-                <img src={logoVanHeusen} alt="Van Heusen" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
-                <img src={logoFama} alt="Fama" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
+                <img src={logoMinikids} alt="Minikids Logo" width="138" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
+                <img src={logoServpro} alt="Servpro Logo" width="87" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
+                <img src={logoVanHeusen} alt="Van Heusen Logo" width="152" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
+                <img src={logoFama} alt="Fama Logo" width="107" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
               </div>
             </div>
           </div>
@@ -116,9 +116,9 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   <div className="text-4xl font-black font-headline text-on-surface">98.4%</div>
                 </div>
               </div>
-              <h3 className="text-2xl font-black font-headline text-on-surface tracking-tight mb-4 uppercase group-hover:text-primary transition-colors">
+              <h2 className="text-2xl font-black font-headline text-on-surface tracking-tight mb-4 uppercase group-hover:text-primary transition-colors">
                 {t('home.hero.consulting.title')}
-              </h3>
+              </h2>
               <p className="text-on-surface-variant text-sm leading-relaxed opacity-60 mb-10 font-body">
                 {t('home.hero.consulting.desc')}
               </p>
@@ -170,7 +170,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   <span className="material-symbols-outlined text-primary text-4xl">arrow_outward</span>
                 </div>
                 <div className="flex justify-between items-start mb-10">
-                  <img src={logoArenaGo} alt="ArenaGo" className="h-24 w-auto group-hover:scale-110 transition-transform duration-500" />
+                  <img src={logoArenaGo} alt="ArenaGo Platform Logo" width="492" height="96" className="h-24 w-auto group-hover:scale-110 transition-transform duration-500" />
                   <span className="material-symbols-outlined text-primary/40 text-4xl">rocket_launch</span>
                 </div>
                 <p className="text-on-surface-variant text-xl opacity-60 leading-relaxed max-w-xl font-light">
@@ -184,7 +184,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               {/* Fintera */}
               <div className="flex-1 neo-bento-card p-12 group cursor-pointer flex flex-col justify-center" onClick={() => onNavigate('/products')}>
                 <div className="flex justify-between items-start mb-8">
-                  <img src={logoFintera} alt="Fintera" className="h-14 w-auto group-hover:scale-110 transition-transform" />
+                  <img src={logoFintera} alt="Fintera Logo" width="183" height="56" className="h-14 w-auto group-hover:scale-110 transition-transform" />
                   <span className="material-symbols-outlined text-primary/40 text-3xl">payments</span>
                 </div>
                 <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-light">
@@ -196,7 +196,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               <div className="flex-1 neo-bento-card p-12 group cursor-pointer flex flex-col justify-center" onClick={() => onNavigate('/products')}>
                 <div className="flex justify-between items-start mb-8">
                   <div className="flex items-center gap-4">
-                    <img src={logoSecureX} alt="SecureX" className="h-14 w-auto group-hover:scale-110 transition-transform" />
+                    <img src={logoSecureX} alt="SecureX Security Solution Logo" width="56" height="56" className="h-14 w-auto group-hover:scale-110 transition-transform" />
                     <span className="text-2xl font-black font-headline text-on-surface uppercase tracking-tight">SecureX</span>
                   </div>
                   <span className="material-symbols-outlined text-primary/40 text-3xl">security</span>
@@ -225,12 +225,12 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-stretch">
             <div className="p-10 neo-bento-card group flex flex-col h-full hover:bg-primary/5">
               <span className="material-symbols-outlined text-primary mb-8 text-5xl group-hover:scale-110 transition-transform">verified</span>
-              <h4 className="text-2xl font-black font-headline text-on-surface uppercase mb-3">{t('home.values.quality.title')}</h4>
+              <h3 className="text-2xl font-black font-headline text-on-surface uppercase mb-3">{t('home.values.quality.title')}</h3>
               <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed flex-1 font-light">{t('home.values.quality.desc')}</p>
             </div>
             <div className="p-10 neo-bento-card group flex flex-col h-full hover:bg-primary/5">
               <span className="material-symbols-outlined text-primary mb-8 text-5xl group-hover:scale-110 transition-transform">bolt</span>
-              <h4 className="text-2xl font-black font-headline text-on-surface uppercase mb-3">{t('home.values.agility.title')}</h4>
+              <h3 className="text-2xl font-black font-headline text-on-surface uppercase mb-3">{t('home.values.agility.title')}</h3>
               <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed flex-1 font-light">{t('home.values.agility.desc')}</p>
             </div>
           </div>

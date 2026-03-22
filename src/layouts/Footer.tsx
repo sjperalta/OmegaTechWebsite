@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="space-y-4">
-          <h5 className="text-primary font-bold text-sm uppercase tracking-widest">{t('footer.solutions')}</h5>
+          <h2 className="text-primary font-bold text-sm uppercase tracking-widest">{t('footer.solutions')}</h2>
           <ul className="space-y-2 text-white/60 text-xs font-body">
             <li><a className="hover:text-primary transition-colors" href="#">{t('footer.solutions.arenago')}</a></li>
             <li><a className="hover:text-primary transition-colors" href="#">{t('footer.solutions.fintera')}</a></li>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="space-y-4">
-          <h5 className="text-primary font-bold text-sm uppercase tracking-widest">{t('footer.company')}</h5>
+          <h2 className="text-primary font-bold text-sm uppercase tracking-widest">{t('footer.company')}</h2>
           <ul className="space-y-2 text-white/60 text-xs font-body">
             <li><a className="hover:text-primary transition-colors" href="#">{t('nav.about')}</a></li>
             <li><a className="hover:text-primary transition-colors" href="#">{t('nav.services')}</a></li>
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="space-y-4">
-          <h5 className="text-primary font-bold text-sm uppercase tracking-widest">{t('footer.legal')}</h5>
+          <h2 className="text-primary font-bold text-sm uppercase tracking-widest">{t('footer.legal')}</h2>
           <div className="flex flex-col gap-2 font-body text-xs tracking-wide text-white/60">
             <a className="hover:text-primary underline-offset-4 hover:underline" href="#">{t('footer.privacy')}</a>
             <a className="hover:text-primary underline-offset-4 hover:underline" href="#">{t('footer.terms')}</a>

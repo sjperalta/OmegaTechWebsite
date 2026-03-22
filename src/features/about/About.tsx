@@ -106,7 +106,7 @@ const About: React.FC = () => {
               ].map((val, i) => (
                 <div key={i} className="neo-bento-card p-12 group hover:bg-primary/5 reveal">
                   <span className="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform">{val.icon}</span>
-                  <h4 className="text-2xl font-black font-headline text-on-surface uppercase mb-4 leading-none">{val.title}</h4>
+                  <h3 className="text-2xl font-black font-headline text-on-surface uppercase mb-4 leading-none">{val.title}</h3>
                   <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-light">{val.desc}</p>
                 </div>
               ))}
@@ -208,6 +208,8 @@ const About: React.FC = () => {
                 <img 
                   key={i} 
                   src={logo} 
+                  width="150"
+                  height="40"
                   className="h-10 w-auto transition-all grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:scale-110" 
                   alt="Partner Logo" 
                 />
