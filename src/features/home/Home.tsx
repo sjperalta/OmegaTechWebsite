@@ -98,8 +98,8 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               <div className="flex flex-wrap gap-x-14 gap-y-10 items-center justify-center lg:justify-start">
                 <img src={logoMinikids} alt="Minikids Logo" width="138" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
                 <img src={logoServpro} alt="Servpro Logo" width="87" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
-                <img src={logoVanHeusen} alt="Van Heusen Logo" width="115" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
-                <img src={logoFama} alt="Fama Logo" width="107" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
+                <img src={logoVanHeusen} alt="Van Heusen Logo" width="115" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100 invert dark:invert-0" />
+                <img src={logoFama} alt="Fama Logo" width="107" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100 invert dark:invert-0" />
               </div>
             </div>
           </div>
@@ -111,10 +111,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-glow-primary group-hover:scale-110 transition-transform">
                    <span className="material-symbols-outlined text-on-primary text-4xl">analytics</span>
                 </div>
-                <div className="text-right">
-                  <div className="text-[10px] font-bold text-primary tracking-[0.2em] uppercase mb-1">{t('home.impact.label')}</div>
-                  <div className="text-4xl font-black font-headline text-on-surface">98.4%</div>
-                </div>
+
               </div>
               <h2 className="text-2xl font-black font-headline text-on-surface tracking-tight mb-4 uppercase group-hover:text-primary transition-colors">
                 {t('home.hero.consulting.title')}
@@ -165,7 +162,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               className="md:col-span-8 neo-bento-card group flex flex-col cursor-pointer min-h-[450px] reveal" 
               onClick={() => onNavigate('/products')}
             >
-              <div className="p-16 flex-1 flex flex-col justify-center relative">
+              <div className="p-8 md:p-12 lg:p-16 flex-1 flex flex-col justify-center relative">
                 <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="material-symbols-outlined text-primary text-4xl">arrow_outward</span>
                 </div>
@@ -176,7 +173,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                     width="492" 
                     height="96" 
                     style={{ aspectRatio: '1311 / 256' }}
-                    className="h-24 w-auto group-hover:scale-110 transition-transform duration-500" 
+                    className="h-12 md:h-16 lg:h-24 w-auto max-w-[80vw] group-hover:scale-110 transition-transform duration-500" 
                   />
                   <span className="material-symbols-outlined text-primary/40 text-4xl">rocket_launch</span>
                 </div>
@@ -246,23 +243,23 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
       {/* CTA Section */}
       <section className="relative py-32 px-8 overflow-hidden">
-        <div className="max-w-6xl mx-auto rounded-[64px] bg-primary p-16 md:p-32 text-center relative overflow-hidden group shadow-2xl shadow-primary/20 reveal">
+        <div className="max-w-6xl mx-auto rounded-[64px] bg-primary/5 dark:bg-primary p-16 md:p-32 text-center relative overflow-hidden group shadow-2xl shadow-primary/20 dark:shadow-none reveal border border-primary/20 dark:border-white/10">
           {/* Animated Background Pulse */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.3),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
-          <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-[100px] group-hover:scale-150 transition-transform duration-1000"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(var(--primary-rgb),0.1),transparent)] dark:bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.3),transparent)] opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 dark:bg-white/10 rounded-full blur-[100px] group-hover:scale-150 transition-transform duration-1000"></div>
           
-          <h2 className="text-on-primary text-5xl md:text-7xl font-black font-headline tracking-tighter uppercase mb-10 relative z-10 leading-[0.9] transition-transform group-hover:scale-[1.02]">
+          <h2 className="text-on-surface dark:text-on-primary text-5xl md:text-7xl font-black font-headline tracking-tighter uppercase mb-10 relative z-10 leading-[0.9] transition-transform group-hover:scale-[1.02]">
             {t('home.cta.title')}
           </h2>
-          <p className="text-on-primary text-xl opacity-80 mb-16 max-w-2xl mx-auto relative z-10 font-light tracking-tight">
+          <p className="text-on-surface-variant dark:text-on-primary/80 text-xl mb-16 max-w-2xl mx-auto relative z-10 font-light tracking-tight">
             {t('home.cta.subtitle')}
           </p>
           <button 
             onClick={() => onNavigate('/contact')}
-            className="group relative bg-on-primary text-primary px-14 py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-sm overflow-hidden transition-all hover:scale-110 hover:shadow-2xl active:scale-95"
+            className="group relative bg-primary dark:bg-on-primary text-on-primary dark:text-primary px-14 py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-sm overflow-hidden transition-all hover:scale-110 hover:shadow-2xl active:scale-95 shadow-xl shadow-primary/20 dark:shadow-none"
           >
             <span className="relative z-10">{t('home.cta.button')}</span>
-            <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-5 transition-opacity"></div>
+            <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </button>
         </div>
       </section>

@@ -15,13 +15,13 @@ const Footer: React.FC = () => {
             {t('footer.tagline')}
           </p>
           <div className="flex flex-col gap-3 mt-8">
-            <a href="mailto:info@omegatech.dev" className="flex items-center gap-3 text-white/70 hover:text-primary transition-colors text-xs group">
+            <a href={`mailto:${t('footer.contact.email')}`} className="flex items-center gap-3 text-white/70 hover:text-primary transition-colors text-xs group">
               <span className="material-symbols-outlined text-lg opacity-70 group-hover:opacity-100 transition-opacity">mail</span>
-              info@omegatech.dev
+              {t('footer.contact.email')}
             </a>
-            <a href="tel:+50499405708" className="flex items-center gap-3 text-white/70 hover:text-primary transition-colors text-xs group">
+            <a href={`tel:${t('footer.contact.phone').replace(/\s/g, '')}`} className="flex items-center gap-3 text-white/70 hover:text-primary transition-colors text-xs group">
               <span className="material-symbols-outlined text-lg opacity-70 group-hover:opacity-100 transition-opacity">call</span>
-              +504 9940 5708
+              {t('footer.contact.phone')}
             </a>
             <div className="flex items-center gap-3 text-white/70 text-xs">
               <span className="material-symbols-outlined text-lg opacity-70">location_on</span>
@@ -61,8 +61,10 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="max-w-6xl mx-auto px-8 mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
-        <span className="text-white/60 text-[10px] tracking-widest font-label uppercase">
-          © {new Date().getFullYear()} OmegaTech. {t('footer.rights')}
+        <span className="text-white/60 text-[10px] tracking-widest font-label uppercase flex items-center gap-2 flex-wrap justify-center md:justify-start">
+          <span>© {new Date().getFullYear()} OmegaTech. {t('footer.rights')}</span>
+          <span className="opacity-20 hidden md:inline-block">|</span>
+          <a href="https://omegatech.dev" className="hover:text-primary transition-colors lowercase tracking-normal font-sans font-medium">omegatech.dev</a>
         </span>
       </div>
     </footer>
