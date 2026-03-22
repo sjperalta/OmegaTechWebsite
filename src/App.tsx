@@ -11,19 +11,16 @@ import CustomCursor from './components/CustomCursor';
 import WhatsAppButton from './components/WhatsAppButton';
 
 const App: React.FC = () => {
-  const getNormalizedPath = (path: string) => {
-    const base = '/OmegaTechWebsite';
-    if (path.startsWith(base)) {
-      return path.slice(base.length) || '/';
-    }
-    return path || '/';
+  const getHashPath = () => {
+    const hash = window.location.hash.slice(1); // remove '#'
+    return hash || '/';
   };
 
-  const [currentPath, setCurrentPath] = useState(getNormalizedPath(window.location.pathname));
+  const [currentPath, setCurrentPath] = useState(getHashPath());
 
   useEffect(() => {
     const handlePopState = () => {
-      setCurrentPath(getNormalizedPath(window.location.pathname));
+      setCurrentPath(getHashPath());
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -31,9 +28,7 @@ const App: React.FC = () => {
   }, []);
 
   const handleNavigate = (path: string) => {
-    // For GitHub Pages, we need to prefix the path with the repo name for pushState
-    const fullPath = path === '/' ? '/OmegaTechWebsite/' : `/OmegaTechWebsite${path}`;
-    window.history.pushState({}, '', fullPath);
+    window.location.hash = path;
     setCurrentPath(path);
     window.scrollTo(0, 0);
   };
