@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { useReveal } from '../../hooks/useReveal';
 import logoFintera from '../../assets/products/fintera/fintera-logo-color.svg';
 import logoSecureX from '../../assets/products/securex/logo_securex.svg';
-import logoArenaGo from '../../assets/products/arena-go/logo_arenago_transparent.png';
+import logoArenaGo from '../../assets/products/arena-go/logo-arenago.webp';
 import logoMinikids from '../../assets/customers/minokids/minikids-logo.svg';
-import logoServpro from '../../assets/customers/servpro/servpro-logo.png';
+import logoServpro from '../../assets/customers/servpro/logo-servpro.webp';
 import logoVanHeusen from '../../assets/customers/vanheusen/van-heusen-white.svg';
-import logoFama from '../../assets/customers/fama/ImagotipoFAMA_Logotipo-blanco.png';
+import logoFama from '../../assets/customers/fama/logo-fama.webp';
 import Lightbox from '../../components/Lightbox';
 
 interface HomeProps {
@@ -98,7 +98,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               <div className="flex flex-wrap gap-x-14 gap-y-10 items-center justify-center lg:justify-start">
                 <img src={logoMinikids} alt="Minikids Logo" width="138" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
                 <img src={logoServpro} alt="Servpro Logo" width="87" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
-                <img src={logoVanHeusen} alt="Van Heusen Logo" width="152" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
+                <img src={logoVanHeusen} alt="Van Heusen Logo" width="115" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
                 <img src={logoFama} alt="Fama Logo" width="107" height="28" className="h-7 w-auto transition-all grayscale hover:grayscale-0 opacity-40 hover:opacity-100" />
               </div>
             </div>
@@ -119,7 +119,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
               <h2 className="text-2xl font-black font-headline text-on-surface tracking-tight mb-4 uppercase group-hover:text-primary transition-colors">
                 {t('home.hero.consulting.title')}
               </h2>
-              <p className="text-on-surface-variant text-sm leading-relaxed opacity-60 mb-10 font-body">
+              <p className="text-on-surface-variant text-sm leading-relaxed opacity-90 mb-10 font-body">
                 {t('home.hero.consulting.desc')}
               </p>
               <div className="space-y-4">
@@ -173,8 +173,8 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                   <img 
                     src={logoArenaGo} 
                     alt="ArenaGo Platform Logo" 
-                    width="1311" 
-                    height="256" 
+                    width="492" 
+                    height="96" 
                     style={{ aspectRatio: '1311 / 256' }}
                     className="h-24 w-auto group-hover:scale-110 transition-transform duration-500" 
                   />

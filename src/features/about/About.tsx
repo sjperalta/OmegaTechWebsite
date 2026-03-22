@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useReveal } from '../../hooks/useReveal';
 import logoMinikids from '../../assets/customers/minokids/minikids-logo.svg';
-import logoServpro from '../../assets/customers/servpro/servpro-logo.png';
+import logoServpro from '../../assets/customers/servpro/logo-servpro.webp';
 import logoVanHeusen from '../../assets/customers/vanheusen/van-heusen-white.svg';
-import logoFama from '../../assets/customers/fama/ImagotipoFAMA_Logotipo-blanco.png';
+import logoFama from '../../assets/customers/fama/logo-fama.webp';
 import imgSergio from '../../assets/people/sergio-peralta-ceo.png';
 import imgKesia from '../../assets/people/kesia-peralta-qa-manager.png';
 
@@ -50,7 +50,7 @@ const About: React.FC = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
               <div className="lg:col-span-7">
-                <p className="text-on-surface-variant text-xl md:text-2xl leading-relaxed opacity-60 font-body font-light tracking-tight mb-12">
+                <p className="text-on-surface-variant text-xl md:text-2xl leading-relaxed opacity-90 font-body font-light tracking-tight mb-12">
                   {t('about.hero.desc')}
                 </p>
                 <div className="flex flex-wrap gap-8 items-center opacity-40">
@@ -77,7 +77,7 @@ const About: React.FC = () => {
                   <h3 className="text-3xl font-black font-headline text-on-surface uppercase mb-6 leading-none group-hover:text-primary transition-colors">
                     {t('about.mission.title')}
                   </h3>
-                  <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-body font-light">
+                  <p className="text-on-surface-variant text-sm opacity-90 leading-relaxed font-body font-light">
                     {t('about.mission.desc')}
                   </p>
                 </div>
@@ -107,7 +107,7 @@ const About: React.FC = () => {
                 <div key={i} className="neo-bento-card p-12 group hover:bg-primary/5 reveal">
                   <span className="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform">{val.icon}</span>
                   <h3 className="text-2xl font-black font-headline text-on-surface uppercase mb-4 leading-none">{val.title}</h3>
-                  <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-light">{val.desc}</p>
+                  <p className="text-on-surface-variant text-sm opacity-90 leading-relaxed font-light">{val.desc}</p>
                 </div>
               ))}
             </div>
@@ -125,7 +125,7 @@ const About: React.FC = () => {
               {t('about.team.title')}
               <span className="text-primary italic pr-2">{t('about.team.title.highlight')}</span>
             </h2>
-            <p className="text-on-surface-variant text-lg opacity-60 leading-relaxed font-light">
+            <p className="text-on-surface-variant text-lg opacity-90 leading-relaxed font-light">
               {t('about.team.subtitle')}
             </p>
           </div>
@@ -181,7 +181,7 @@ const About: React.FC = () => {
               <h2 className="text-4xl md:text-6xl font-black font-headline tracking-tighter text-on-surface uppercase mb-10 leading-[0.85]">
                 {t('about.presence.title')}
               </h2>
-              <p className="text-on-surface-variant text-lg opacity-60 leading-relaxed font-light max-w-lg">
+              <p className="text-on-surface-variant text-lg opacity-90 leading-relaxed font-light max-w-lg">
                 {t('about.presence.desc')}
               </p>
             </div>
