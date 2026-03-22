@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
             <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter leading-[0.8] text-on-surface uppercase mb-12 [text-wrap:balance]">
               {t('contact.title')} <br /> <span className="text-primary">{t('contact.title.highlight')}</span>
             </h1>
-            <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed opacity-60 font-body font-light tracking-tight">
+            <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed opacity-90 font-body font-light tracking-tight">
               {t('contact.subtitle')}
             </p>
           </div>

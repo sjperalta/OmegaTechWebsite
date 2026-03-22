@@ -90,7 +90,7 @@ const Products: React.FC<ProductsProps> = ({ onNavigate }) => {
                 );
               })()}
             </h1>
-            <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed opacity-60 font-body font-light tracking-tight">
+            <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed opacity-90 font-body font-light tracking-tight">
               {t('products.hero.desc')}
             </p>
           </div>
@@ -145,7 +145,7 @@ const Products: React.FC<ProductsProps> = ({ onNavigate }) => {
                       alt={product.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-90"></div>
                   </div>
                 </div>
               </div>
@@ -164,7 +164,7 @@ const Products: React.FC<ProductsProps> = ({ onNavigate }) => {
                 <div key={i} className="text-center md:text-left reveal">
                    <span className="material-symbols-outlined text-primary text-4xl mb-6">{item.icon}</span>
                    <h4 className="text-xl font-black font-headline text-on-surface uppercase mb-4">{item.title}</h4>
-                   <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-light">{item.desc}</p>
+                   <p className="text-on-surface-variant text-sm opacity-90 leading-relaxed font-light">{item.desc}</p>
                 </div>
               ))}
            </div>

@@ -233,12 +233,12 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             <div className="p-10 neo-bento-card group flex flex-col h-full hover:bg-primary/5">
               <span className="material-symbols-outlined text-primary mb-8 text-5xl group-hover:scale-110 transition-transform">verified</span>
               <h3 className="text-2xl font-black font-headline text-on-surface uppercase mb-3">{t('home.values.quality.title')}</h3>
-              <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed flex-1 font-light">{t('home.values.quality.desc')}</p>
+              <p className="text-on-surface-variant text-sm opacity-90 leading-relaxed flex-1 font-light">{t('home.values.quality.desc')}</p>
             </div>
             <div className="p-10 neo-bento-card group flex flex-col h-full hover:bg-primary/5">
               <span className="material-symbols-outlined text-primary mb-8 text-5xl group-hover:scale-110 transition-transform">bolt</span>
               <h3 className="text-2xl font-black font-headline text-on-surface uppercase mb-3">{t('home.values.agility.title')}</h3>
-              <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed flex-1 font-light">{t('home.values.agility.desc')}</p>
+              <p className="text-on-surface-variant text-sm opacity-90 leading-relaxed flex-1 font-light">{t('home.values.agility.desc')}</p>
             </div>
           </div>
         </div>

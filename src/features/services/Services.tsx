@@ -78,7 +78,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
             <h1 className="text-5xl md:text-7xl font-black font-headline tracking-tighter leading-[0.8] text-on-surface uppercase mb-12 [text-wrap:balance]">
               Digital <span className="text-primary">Ecosystems</span>
             </h1>
-            <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed opacity-60 font-body font-light tracking-tight">
+            <p className="text-on-surface-variant text-xl md:text-2xl max-w-2xl leading-relaxed opacity-90 font-body font-light tracking-tight">
               {t('services.hero.desc')}
             </p>
           </div>
@@ -100,7 +100,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
               <h3 className="text-2xl font-black font-headline text-on-surface uppercase mb-4 leading-none group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
-              <p className="text-on-surface-variant text-sm opacity-60 leading-relaxed font-body font-light flex-1">
+              <p className="text-on-surface-variant text-sm opacity-90 leading-relaxed font-body font-light flex-1">
                 {service.desc}
               </p>
               <div className="mt-8 pt-8 border-t border-white/5 opacity-0 group-hover:opacity-100 transition-opacity">
